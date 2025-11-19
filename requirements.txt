@@ -1,0 +1,13 @@
+google-adk
+google-genai
+fastapi
+uvicorn
+qdrant-client
+pydantic
+python-dotenv
+pandas
+httpx
+loguru
+anyio
+requests
+jinja2

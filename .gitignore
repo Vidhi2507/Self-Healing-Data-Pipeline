@@ -1,0 +1,17 @@
+# Ignore Python virtual environments
+
+/hackathon/
+
+# Ignore Python caches
+__pycache__/
+*.pyc
+
+# Ignore uploads
+uploads/
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
