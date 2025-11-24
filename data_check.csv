@@ -1,4 +1,11 @@
-id,name
-1,Vidhi
-2,Meet
-3,Neha
+ParticipantID, FirstName,LastName,DOB,Email,TeamName,ProjectTitle,Category,Age
+1,Alice,Johnson,12-05-1998,alice@example.com,Team Alpha,Smart Recycling Bin,Environment,26.0
+2,Bob,,,bob@example.com,Team Alpha,Smart Recycling Bin,Environment,
+3,Charlie,Wu,14-05-1990,charlie@example.com,Team Innovate,Health Tracker App,Health,
+4,Deepa,Shah,15-05-1990,deepa@example.com,Team Vision,AI Traffic Monitor,Smart City,
+5,Ethan,Brown,12-05-1998,ethan@example.com,,FinAssist,Business,26.0
+6,Fatima,Khan,13-05-2000,fatima@example.com,Team CodeWave,FinAssist,Business,
+7,George,Lopez,14-05-1990,george[at]email.com,Team Builders,Plant Care Bot,Enviroment,
+8,Hana,Torres,15-05-1990,hana@example.com,Team Builders,Plant Care Bot,Environment,
+9,,Parker,12-05-1998,ian@example.com,Team Vision,AI Traffic Monitor,Smart City,26.0
+10,Jenny,Kim,13-05-2000,jenny@example.com,Team Innovate,Health Tracker App,Health,

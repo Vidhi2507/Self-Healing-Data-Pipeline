@@ -1,7 +1,7 @@
 # Ignore Python virtual environments
 
 /hackathon/
-
+latest_error.json
 # Ignore Python caches
 __pycache__/
 *.pyc
@@ -10,9 +10,7 @@ __pycache__/
 uploads/
 
 # Ignore IDE files
-.vscode/
-.idea/
+
 
 # Ignore OS files
-.DS_Store
 .env
