@@ -1,6 +1,9 @@
 # Diagnostic.py
 import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyATz2SrNzjSCVm5PEuPT-WnoeElIwE8TWs"
+from google import genai
+from dotenv import load_dotenv
+load_dotenv()
+api_key=os.getenv("GOOGLE_API_KEY")
 
 from google.adk.runners import Runner
 from google.adk.agents import LlmAgent
@@ -46,6 +49,7 @@ Return JSON:
     agent = LlmAgent(
         name="DiagnosticAgent",
         model="gemini-2.5-flash",
+        api_key=api_key,
         instruction="Diagnose data errors.",
         output_schema=DiagnosisSchema,
     )
