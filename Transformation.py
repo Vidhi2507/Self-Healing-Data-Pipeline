@@ -11,6 +11,7 @@ def run_pipeline(path):
         today = pd.Timestamp.now()
         df["Age"] = pd.to_datetime(df["DOB"], errors="coerce")
         df["Age"] = (today - df["Age"]).dt.days // 365
+        
 
         # Save cleaned data so ValidatorAgent can access it
         df.to_csv("data_check.csv", index=False)

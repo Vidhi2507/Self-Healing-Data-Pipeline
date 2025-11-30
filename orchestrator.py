@@ -1,6 +1,8 @@
 # orchestrator.py
 import asyncio
 import json
+import uuid
+from Memory.qdrant_memory import upsert_incident
 from Transformation import run_pipeline
 from DiagnosticAgent import run_diagnostic
 from RepairAgent import run_repair
@@ -22,7 +24,11 @@ async def orchestrator(path: str):
                 payload = json.load(f)
 
             diagnosis = await run_diagnostic(payload)
-            print("Diagnosis:", diagnosis)
+            # print("Diagnosis:", diagnosis)
+            # quadrant_summary = diagnosis.diagnosis
+            # severity = diagnosis.severity
+    
+            # upsert_incident(str(uuid.uuid4()), quadrant_summary, severity)
 
             print("\n🛠 Running Repair Agent...")
             await run_repair(diagnosis)

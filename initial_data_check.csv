@@ -1,4 +1,4 @@
-ParticipantID, FirstName,LastName,DOB,Email,TeamName,ProjectTitle,Category
+ParticipantID, FirstName,LastName,DoB,Email,TeamName,ProjectTitle,Category
 1,Alice,Johnson,12-05-1998,alice@example.com,Team Alpha,Smart Recycling Bin,Environment
 2,Bob,,13-05-2000,bob@example.com,Team Alpha,Smart Recycling Bin,Environment
 3,Charlie,Wu,14-05-1990,charlie@example.com,Team Innovate,Health Tracker App,Health

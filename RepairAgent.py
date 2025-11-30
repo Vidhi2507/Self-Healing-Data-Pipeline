@@ -15,7 +15,7 @@ import asyncio, json
 
 from pydantic import BaseModel
 
-APP_NAME = "data_pipeline"
+APP_NAME = "agents"
 session_service = InMemorySessionService()
 
 
@@ -30,7 +30,7 @@ async def run_repair(diagnosis):
         await session_service.create_session(
         session_id="repair-session",
         user_id="vidhi",
-        app_name="data_pipeline"
+        app_name=APP_NAME
     )
     except AlreadyExistsError:
         pass
@@ -52,7 +52,6 @@ Return valid JSON:
     agent = LlmAgent(
         name="RepairAgent",
         model="gemini-2.5-flash",
-        api_key=api_key,
         instruction="Generate robust pandas repair code",
         output_schema=RepairSchema
     )

@@ -10,7 +10,7 @@ from google.adk.agents import LlmAgent
 from google.adk.sessions import InMemorySessionService
 from google.adk.errors.already_exists_error import AlreadyExistsError
 from google.genai import types
-import asyncio, json
+import json
 from pydantic import BaseModel
 from typing import List
 
@@ -27,7 +27,7 @@ async def run_diagnostic(error_payload):
         await session_service.create_session(
         session_id="diagnostic-session",
         user_id="vidhi",
-        app_name="data_pipeline"
+        app_name="agents"
     )
     except AlreadyExistsError:
         pass
@@ -49,14 +49,13 @@ Return JSON:
     agent = LlmAgent(
         name="DiagnosticAgent",
         model="gemini-2.5-flash",
-        api_key=api_key,
-        instruction="Diagnose data errors.",
+        instruction="Diagnose data errors and suggest corrections.",
         output_schema=DiagnosisSchema,
     )
 
     runner = Runner(
         agent=agent,
-        app_name="data_pipeline",
+        app_name="agents",
         session_service=session_service,
     )
 

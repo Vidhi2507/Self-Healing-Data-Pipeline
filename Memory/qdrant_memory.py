@@ -11,20 +11,19 @@ from qdrant_client.http.models import PointStruct
 # google-genai (Gemini)
 from google import genai
 from dotenv import load_dotenv
-
 load_dotenv()
+
+#diagnostic agent import for embedding
+from DiagnosticAgent import run_diagnostic
 
 # Configure Gemini (google-genai)
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
-
 QDRANT_URL = os.getenv("QDRANT_URL")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 
 # Collection config
-QDRANT_COLLECTION = "incidents"
-VECTOR_SIZE = 768  # recommended embedding dim for production models; Gemini embeddings can vary
-
+QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION_NAME")
+VECTOR_SIZE = 768  
 def get_qdrant_client() -> QdrantClient:
     if not QDRANT_URL or not QDRANT_API_KEY:
         raise EnvironmentError("QDRANT_URL and QDRANT_API_KEY must be set in .env")
@@ -41,10 +40,6 @@ def ensure_collection(vector_size: int = VECTOR_SIZE):
         )
 
 def embed_text_gemini(text: str) -> List[float]:
-    """
-    Use Gemini embeddings via google-genai.
-    Replace 'models/text-embedding-gecko-001' with the actual model name if needed.
-    """
     if not GOOGLE_API_KEY:
         raise EnvironmentError("GOOGLE_API_KEY not set in .env")
 
@@ -65,23 +60,23 @@ def upsert_incident(incident_id: str, text_summary: str, metadata: Dict[str, Any
     ensure_collection()
     # get embedding
     vec = embed_text_gemini(text_summary)
-    point = PointStruct(id=incident_id, vector=vec, payload={"summary": text_summary, "metadata": metadata})
+    point = PointStruct(id=incident_id, vector=vec, payload={"diagnosis": text_summary, "severity": metadata})
     client.upsert(collection_name=QDRANT_COLLECTION, points=[point])
 
-def search_similar(text_query: str, limit: int = 3):
-    client = get_qdrant_client()
-    ensure_collection()
-    q_vec = embed_text_gemini(text_query)
-    hits = client.query_points(collection_name=QDRANT_COLLECTION, query=q_vec, limit=limit)
+# def search_similar(text_query: str, limit: int = 3):
+#     client = get_qdrant_client()
+#     ensure_collection()
+#     q_vec = embed_text_gemini(text_query)
+#     hits = client.query_points(collection_name=QDRANT_COLLECTION, query=q_vec, limit=limit)
     
-    print("----")
-    points = hits.points
-    results = []
-    for h in points:
-        #print(h)
-        results.append({"id": h.id, "score": h.score, "payload": h.payload})
+#     print("----")
+#     points = hits.points
+#     results = []
+#     for h in points:
+#         #print(h)
+#         results.append({"id": h.id, "score": h.score, "payload": h.payload})
         
-    return results
+#     return results
 
 if __name__ == "__main__":
-    print("Qdrant memory helper ready. Make sure .env has GOOGLE_API_KEY and QDRANT_* set.")
+    print(f"Upserted incident in Qdrant Memory")
