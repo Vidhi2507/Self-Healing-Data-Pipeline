@@ -27,7 +27,7 @@ VECTOR_SIZE = 768
 def get_qdrant_client() -> QdrantClient:
     if not QDRANT_URL or not QDRANT_API_KEY:
         raise EnvironmentError("QDRANT_URL and QDRANT_API_KEY must be set in .env")
-    return QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
+    return QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY, check_compatibility=False)
 
 def ensure_collection(vector_size: int = VECTOR_SIZE):
     client = get_qdrant_client()

@@ -23,15 +23,15 @@ async def orchestrator(path: str):
             with open("latest_error.json") as f:
                 payload = json.load(f)
 
-            diagnosis = await run_diagnostic(payload)
-            # print("Diagnosis:", diagnosis)
-            # quadrant_summary = diagnosis.diagnosis
-            # severity = diagnosis.severity
+            diagnosis_op = await run_diagnostic(payload)
+            print("Diagnosis:", diagnosis_op)
+            quadrant_summary = diagnosis_op['diagnosis']
+            severity = diagnosis_op['severity']
     
-            # upsert_incident(str(uuid.uuid4()), quadrant_summary, severity)
+            #upsert_incident(str(uuid.uuid4()), quadrant_summary, severity)
 
             print("\n🛠 Running Repair Agent...")
-            await run_repair(diagnosis)
+            await run_repair(diagnosis_op)
             continue
 
         print("✔ Transformation successful. No errors detected.\n")

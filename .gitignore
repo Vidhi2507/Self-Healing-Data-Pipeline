@@ -1,16 +1,6 @@
-# Ignore Python virtual environments
 
+.env
 /hackathon/
 latest_error.json
-# Ignore Python caches
 __pycache__/
 *.pyc
-
-# Ignore uploads
-uploads/
-
-# Ignore IDE files
-
-
-# Ignore OS files
-.env

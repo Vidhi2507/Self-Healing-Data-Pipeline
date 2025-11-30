@@ -1,11 +1,11 @@
-ParticipantID,FirstName,LastName,DoB,Email,TeamName,ProjectTitle,Category,DOB,Age
-1,Aarav,Sharma,15-08-1998,aarav.sharma@example.com,Team Alpha,Smart Water Monitor,Environment,,
-2,Ananya,Verma,22-11-2001,ananya.verma@example.com,Team Alpha,Smart Water Monitor,Environment,,
-3,Rohan,Patil,05-03-1997,rohan.patil@example.com,Team Innovate,Health Tracker App,Health,,
-4,Meera,Iyer,19-12-1995,meera.iyer@example.com,Team Vision,AI Traffic Analyzer,Smart City,,
-5,Krish,Mehta,01-01-1998,krish.mehta@example.com,Team CodeWave,FinAssist,Business,,
-6,Isha,Kapoor,17-07-2002,isha.kapoor@example.com,Team CodeWave,FinAssist,Business,,
-7,Dev,Singh,09-09-1996,dev.singh@example.com,Team Builders,Agri Crop Monitor,Agriculture,,
-8,Simran,Kaur,28-02-2000,simran.kaur@example.com,Team Builders,Agri Crop Monitor,Agriculture,,
-9,Aditya,Rao,14-04-1999,aditya.rao@example.com,Team Vision,AI Traffic Analyzer,Smart City,,
-10,Tanya,Nair,30-06-2001,tanya.nair@example.com,Team Innovate,Health Tracker App,Health,,
+ParticipantID,FirstName,LastName,DOB,Email,TeamName,ProjectTitle,Category,Age
+1,Aarav,Sharma,15-08-1998,aarav.sharma@example.com,Team Alpha,Smart Water Monitor,Environment,27
+2,Ananya,Verma,22-11-2001,ananya.verma@example.com,Team Alpha,Smart Water Monitor,Environment,24
+3,Rohan,Patil,05-03-1997,rohan.patil@example.com,Team Innovate,Health Tracker App,Health,28
+4,Meera,Iyer,19-12-1995,meera.iyer@example.com,Team Vision,AI Traffic Analyzer,Smart City,29
+5,Krish,Mehta,01-01-1998,krish.mehta@example.com,Team CodeWave,FinAssist,Business,27
+6,Isha,Kapoor,17-07-2002,isha.kapoor@example.com,Team CodeWave,FinAssist,Business,23
+7,Dev,Singh,09-09-1996,dev.singh@example.com,Team Builders,Agri Crop Monitor,Agriculture,29
+8,Simran,Kaur,28-02-2000,simran.kaur@example.com,Team Builders,Agri Crop Monitor,Agriculture,25
+9,Aditya,Rao,14-04-1999,aditya.rao@example.com,Team Vision,AI Traffic Analyzer,Smart City,26
+10,Tanya,Nair,30-06-2001,tanya.nair@example.com,Team Innovate,Health Tracker App,Health,24
